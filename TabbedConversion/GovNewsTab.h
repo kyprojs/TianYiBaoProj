@@ -90,6 +90,7 @@
 -(IBAction)showNationalNewsList:(id)sender;
 - (IBAction)chooseProvinceAndCity:(id)sender;
 
+
 -(void)getNews:(NSString*)newsClass;
 
 -(void )setupFootSpinnerView;

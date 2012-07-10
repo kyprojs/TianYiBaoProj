@@ -202,6 +202,47 @@
 }
 
 
+-(void)changeButtonStyleToSelect:(UIButton *)button {
+    [button setBackgroundImage:[UIImage imageNamed:@"play_background.png"] forState:UIControlStateNormal];
+    [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+}
+
+-(void)changeButtonStyleToUnselect:(UIButton *)button{
+    [button setBackgroundImage:nil forState:UIControlStateNormal];
+    [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+}
+
+
+- (IBAction)govBroadStyle:(id)sender {
+    [self changeButtonStyleToSelect:govBroadCast];
+    [self changeButtonStyleToUnselect:govInfo];
+    [self changeButtonStyleToUnselect:localNews];
+    [self changeButtonStyleToUnselect:nationalNews];
+}
+
+- (IBAction)govInfoStyle:(id)sender {
+    [self changeButtonStyleToUnselect:govBroadCast];
+    [self changeButtonStyleToSelect:govInfo];
+    [self changeButtonStyleToUnselect:localNews];
+    [self changeButtonStyleToUnselect:nationalNews];
+    
+}
+
+- (IBAction)localNewsStyle:(id)sender {
+    [self changeButtonStyleToUnselect:govBroadCast];
+    [self changeButtonStyleToUnselect:govInfo];
+    [self changeButtonStyleToSelect:localNews];
+    [self changeButtonStyleToUnselect:nationalNews];
+}
+
+- (IBAction)nationStyle:(id)sender {
+    [self changeButtonStyleToUnselect:govBroadCast];
+    [self changeButtonStyleToUnselect:govInfo];
+    [self changeButtonStyleToUnselect:localNews];
+    [self changeButtonStyleToSelect:nationalNews];
+}
+
+
 
 
 
@@ -587,9 +628,11 @@
     [localNewsItem setStyle:UIBarButtonItemStyleBordered];
     [nationalNewsItem setStyle:UIBarButtonItemStyleBordered];
     
-    [govBroadCast ]
+    
     
 }
+
+
 
 //每次打开视图初始化数据
 - (void)viewWillAppear:(BOOL)animated{
