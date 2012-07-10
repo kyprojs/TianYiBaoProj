@@ -144,7 +144,7 @@
 //        NSLog(@"aaaaaaaaaaaaaaaaaaaaaaaa%@",[GlobalVariableStore sharedInstance].city);
 //    }else if(tabBarController.selectedIndex == 1){
 //        NSLog(@"nnnnnnnnnnnnnnnnnnnnnnnn%@",[GlobalVariableStore sharedInstance].city);
-//    }else if(){
+//    }else if(tabBarController.selectedIndex == 11){
 //        
 //        [self showLoginView];
 ////        [self.window addSubview:myLoginController.view];

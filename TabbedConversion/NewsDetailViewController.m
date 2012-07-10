@@ -239,6 +239,11 @@
 //上一条新闻
 - (void)lastButtonClick:(id)sender {
 	NSMutableArray * tempMA=[LoadNews getNewsContent:newsId tabWidget:currentMainTab label:currentSubTab naviAct:@"0"] ;
+    if () {
+        <#statements#>
+    }
+    
+    
     NSDictionary *item=(NSDictionary *)[tempMA objectAtIndex:0];
     NSString *title=[item objectForKey:@"article_title"];
     NSString *date=[item objectForKey:@"article_date"];
