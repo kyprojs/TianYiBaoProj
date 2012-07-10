@@ -90,6 +90,13 @@
 -(IBAction)showNationalNewsList:(id)sender;
 - (IBAction)chooseProvinceAndCity:(id)sender;
 
+- (IBAction)govBroadStyle:(id)sender;
+- (IBAction)govInfoStyle:(id)sender;
+- (IBAction)localNewsStyle:(id)sender;
+- (IBAction)nationStyle:(id)sender;
+
+
+
 
 -(void)getNews:(NSString*)newsClass;
 
