@@ -165,7 +165,7 @@
 
 //创建一个AlertView
 - (void) creatAlert:(NSString *)message{
-    UIAlertView *infoAlert = [[UIAlertView alloc]initWithTitle:@"提示:" message:message delegate:nil cancelButtonTitle:nil otherButtonTitles:nil , nil];
+    UIAlertView *infoAlert = [[UIAlertView alloc]initWithTitle:@"温馨提示:" message:message delegate:nil cancelButtonTitle:nil otherButtonTitles:nil , nil];
     [infoAlert show];
     [self performSelector:@selector(dimissAlert:) withObject:infoAlert afterDelay:1.0];
 }
@@ -238,36 +238,38 @@
 
 //上一条新闻
 - (void)lastButtonClick:(id)sender {
-	NSMutableArray * tempMA=[LoadNews getNewsContent:newsId tabWidget:currentMainTab label:currentSubTab naviAct:@"0"] ;
-    if () {
-        <#statements#>
+	NSMutableArray * tempMA=[LoadNews getNewsContent:newsId tabWidget:currentMainTab label:currentSubTab naviAct:@"0"];
+    if ([tempMA count]==0) {
+        [self creatAlert:@"没有上一条!"];
+    }else{
+        NSDictionary *item=(NSDictionary *)[tempMA objectAtIndex:0];
+        NSString *title=[item objectForKey:@"article_title"];
+        NSString *date=[item objectForKey:@"article_date"];
+        NSString *source=[item objectForKey:@"article_from"];
+        NSString *content=[item objectForKey:@"article_text"  ];
+        NSString *newsID=[item objectForKey:@"id"];
+        
+        [self setTitleAndContent:newsID tabWidget:currentMainTab label:currentSubTab newsTitle:title date:date source:source content:content];
     }
-    
-    
-    NSDictionary *item=(NSDictionary *)[tempMA objectAtIndex:0];
-    NSString *title=[item objectForKey:@"article_title"];
-    NSString *date=[item objectForKey:@"article_date"];
-    NSString *source=[item objectForKey:@"article_from"];
-    NSString *content=[item objectForKey:@"article_text"  ];
-    NSString *newsID=[item objectForKey:@"id"];
-    
-    [self setTitleAndContent:newsID tabWidget:currentMainTab label:currentSubTab newsTitle:title date:date source:source content:content];     
 }
+
+
 
 //下一条新闻
 - (void)nextButtonClick:(id)sender {
-	//NSString *newsID=[item objectForKey:@"id"];
-    NSMutableArray * tempMA=[LoadNews getNewsContent:newsId tabWidget:currentMainTab label:currentSubTab naviAct:@"1"] ;
-    NSDictionary *item=(NSDictionary *)[tempMA objectAtIndex:0];
-    NSString *title=[item objectForKey:@"article_title"];
-    NSString *date=[item objectForKey:@"article_date"];
-    NSString *source=[item objectForKey:@"article_from"];
-    NSString *content=[item objectForKey:@"article_text"  ];
-    NSString *newsID=[item objectForKey:@"id"];
-    
-    [self setTitleAndContent:newsID tabWidget:currentMainTab label:currentSubTab newsTitle:title date:date source:source content:content];
-    
-}
+	NSMutableArray * tempMA=[LoadNews getNewsContent:newsId tabWidget:currentMainTab label:currentSubTab naviAct:@"1"];
+    if ([tempMA count]==0) {
+        [self creatAlert:@"没有下一条!"];
+    }else{
+        NSDictionary *item=(NSDictionary *)[tempMA objectAtIndex:0];
+        NSString *title=[item objectForKey:@"article_title"];
+        NSString *date=[item objectForKey:@"article_date"];
+        NSString *source=[item objectForKey:@"article_from"];
+        NSString *content=[item objectForKey:@"article_text"  ];
+        NSString *newsID=[item objectForKey:@"id"];
+        
+        [self setTitleAndContent:newsID tabWidget:currentMainTab label:currentSubTab newsTitle:title date:date source:source content:content];
+    }}
 
 //收藏
 - (void)favButtonClick:(id)sender {

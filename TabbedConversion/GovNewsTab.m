@@ -24,6 +24,8 @@
 @synthesize provinceID,areaCode;
 @synthesize newsIndexStatus;//记录当前TAB中的记录状态
 
+@synthesize govBroadCast,govInfo,localNews,nationalNews;
+
 
 
 //加载更多新闻
@@ -280,8 +282,7 @@
 
 //segment code of show News()
 -(IBAction)showGovBroadCastNewsList:(id)sender{
-    [govBroadCastItem setStyle:UIBarButtonItemStyleDone];
-    
+    [govBroadCastItem setStyle:UIBarButtonItemStyleDone];    
     [govInfoItem setStyle:UIBarButtonItemStyleBordered];
     [localNewsItem setStyle:UIBarButtonItemStyleBordered];
     [nationalNewsItem setStyle:UIBarButtonItemStyleBordered];
@@ -316,8 +317,12 @@
 
 //-(UIButton *)changeButtonStyle:(NSString *)title{
 //    UIButton *button = [[UIButton alloc]init];
-//    [button setBackgroundColor:[UIColor whiteColor]];
-//    [button setTitle:title forState:];
+////    [button setBackgroundColor:[UIColor whiteColor]];
+//    [button setFrame:CGRectMake(0, 0, 70, 31)];
+//    [button setBackgroundImage:[UIImage imageNamed:@"play_background.png"] forState:UIControlStateSelected];
+//    [button setTitle:title forState:UIControlStateSelected];
+//    [button retain];
+//    return button;
 //}
 
 
@@ -577,10 +582,11 @@
     
     [newsListView reloadData];
     
-    [govBroadCastItem setStyle:UIBarButtonItemStyleDone];
+    [govBroadCastItem setStyle:UIBarButtonItemStyleDone];    
     [govInfoItem setStyle:UIBarButtonItemStyleBordered];
     [localNewsItem setStyle:UIBarButtonItemStyleBordered];
     [nationalNewsItem setStyle:UIBarButtonItemStyleBordered];
+    
 }
 
 //每次打开视图初始化数据

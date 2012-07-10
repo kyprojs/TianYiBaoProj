@@ -18,6 +18,14 @@
     IBOutlet UIBarButtonItem *govInfoItem;
     IBOutlet UIBarButtonItem *localNewsItem;
     IBOutlet UIBarButtonItem *nationalNewsItem;
+    
+    IBOutlet UIButton *govBroadCast;
+    IBOutlet UIButton *govInfo;
+    IBOutlet UIButton *localNews;
+    IBOutlet UIButton *nationalNews;
+    
+    
+    
     IBOutlet UILabel *cityLable;
     IBOutlet UILabel *userLable;
     
@@ -51,6 +59,12 @@
 @property(retain,nonatomic)  UIBarButtonItem *govInfoItem;
 @property(retain,nonatomic)  UIBarButtonItem *localNewsItem;
 @property(retain,nonatomic)  UIBarButtonItem *nationalNewsItem;
+
+@property (retain,nonatomic) IBOutlet UIButton *govBroadCast;
+@property (retain,nonatomic) IBOutlet UIButton *govInfo;
+@property (retain,nonatomic) IBOutlet UIButton *localNews;
+@property (retain,nonatomic) IBOutlet UIButton *nationalNews;
+
 @property(retain,nonatomic) UITableView *newsListView;
 
 @property (nonatomic) NSInteger currentPage;
