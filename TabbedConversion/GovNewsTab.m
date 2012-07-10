@@ -587,6 +587,9 @@
     [localNewsItem setStyle:UIBarButtonItemStyleBordered];
     [nationalNewsItem setStyle:UIBarButtonItemStyleBordered];
     
+    
+    
+    
 }
 
 //每次打开视图初始化数据
